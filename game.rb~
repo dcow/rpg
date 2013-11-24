@@ -1,0 +1,23 @@
+# Copyleft Alexander Marrs, marrsale@live.com
+# website: http://marrsale.herokuapp.com
+# Github: github.com/marrsale
+
+##Some reference cred: https://github.com/jlnr/gosu/wiki/Ruby-Tutorial
+
+require 'rubygems'
+require 'gosu'
+
+class MyWindow < Gosu::Window
+
+  def initialize
+    super(640, 480, false)
+    
+  end
+
+  def update
+  end
+
+  def draw
+  end
+
+end

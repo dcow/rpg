@@ -1,0 +1,13 @@
+# Copyleft Alexander Marrs, marrsale@live.com
+# website: http://marrsale.herokuapp.com
+# Github: github.com/marrsale
+
+require 'rubygems'
+require 'gosu'
+
+class Player
+  def initialize
+    @someVar = nil
+  end
+
+end
