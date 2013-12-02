@@ -19,7 +19,6 @@ class MyWindow < Gosu::Window
   def initialize
     super(Gvals::WIDTH, Gvals::HEIGHT, false)
     
-    #init player
     @player = Player.new 
 
     @overworld = Overworld.new(self, @player)
@@ -45,7 +44,7 @@ class MyWindow < Gosu::Window
   end
 
   def draw
-    #maybe create an object variable to point at current activity class (e.g. overworld, battle, dungeon), then call its draw method 
+    #maybe create an variable to point at current activity class (e.g. overworld, battle, dungeon), then call its draw method 
     @overworld.draw
   end
 
@@ -56,5 +55,6 @@ class MyWindow < Gosu::Window
   end
 end
 
+#create game instance and display it
 w = MyWindow.new
 w.show
