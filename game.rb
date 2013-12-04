@@ -33,7 +33,7 @@ class MyWindow < Gosu::Window
     end
     if button_down? Gosu::KbRight
       io[:right] = true
-    end
+    endshit 
     if button_down? Gosu::KbUp
       io[:up] = true
     end
