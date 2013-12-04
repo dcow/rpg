@@ -17,14 +17,17 @@ class Overworld
   include Gvals
 
   def initialize(window, player)
-
- 
-    @background_img = Gosu::Image.new(window, "hellscape.png", false)
     
     @player = player 
     @player_img = Gosu::Image.new(window, "overworld_player.png", false)
+
+    #load map tile data, grab assets
+    @curr_tile = load_map('tile')
     
-    #entities, batch initialized and added to an array
+    #read entities array from @curr_tile, initialize each
+    # @curr_tile[:entities].each do ... end
+
+    @background_img = Gosu::Image.new(window, @curr_tile["background_img"], false)
   end
 
   def update(io)
@@ -38,6 +41,15 @@ class Overworld
     #draw player and entities images z=1
     @player_img.draw(@player.x, @player.y, 1, 0.2, 0.2)
     
-
   end
+
+  def load_map(tilename)
+    #grab the correct file by tile name
+    raw = File.open("#{tilename}.tile",'r') do |f|
+      f.read
+    end
+  
+    parsed = JSON.parse(raw)
+  end
+  
 end
