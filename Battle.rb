@@ -20,38 +20,45 @@ class Battle
   end
 
   def battle_over
-    #determines if battle is over
+    #determines if battle is over, return bool
+    #if player1 == dead or player2 == dead
+    #some player forfeits
   end
 
   def update
-    
-    while !battle_over
-      
-      p1_action = get_battle_action(@p1)
-      p2_action = get_battle_action(@p2)
-      
-      #determine order, evaluate actions block
-      if p1.initiative > p2.initiative
-        result = calculate(p1_action, p2_action)
-      end
-      if p2.initiative > p1.initiative
-        result = calculate(p2_action, p1_action)
-      end
-      if p2.initiative == p1.initiative
-        #coin flip to decide
-        if rand(2) == 0
-          result = calculate(p1_action, p2_action)
-        else
-          result = calculate(p2_action, p1_action)
-        end
-      end
+    if !battle_over
 
       
-      display result
-      
-    end#while
+
+    end
+  end
+
+  def battle_phase
+    
+    p1_action = get_battle_action(@p1)
+    p2_action = get_battle_action(@p2)
+    
+    #determine order, evaluate actions block
+    if p1.initiative > p2.initiative
+      result = calculate(p1_action, p2_action)
+    end
+    if p2.initiative > p1.initiative
+      result = calculate(p2_action, p1_action)
+    end
+    if p2.initiative == p1.initiative
+      #coin flip to decide
+      if rand(2) == 0
+        result = calculate(p1_action, p2_action)
+      else
+        result = calculate(p2_action, p1_action)
+      end
+    end
+    
+    
+    display result
     
   end
+
 
   def draw
     #draw background image = 0
