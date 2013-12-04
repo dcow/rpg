@@ -26,13 +26,14 @@ class MyWindow < Gosu::Window
   end
 
   def update
+    #get this out of here
     io = Hash.new
     if button_down? Gosu::KbLeft
       io[:left] = true
     end
     if button_down? Gosu::KbRight
       io[:right] = true
-    end
+    endshit 
     if button_down? Gosu::KbUp
       io[:up] = true
     end
